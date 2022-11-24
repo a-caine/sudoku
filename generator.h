@@ -3,14 +3,18 @@
 
 #include <stdint.h>
 
-#define BOARD_SIZE 9;
+extern const uint8_t BOARD_SIZE;
 
 // Basic board structure
 struct board {
     uint8_t *numbers;
 };
 
-int getBoardSize();
+struct board generateEmptyBoard();
+
+void printBoard(struct board b);
+
+int writeNumber(char r, char c, int v);
 
 
 
