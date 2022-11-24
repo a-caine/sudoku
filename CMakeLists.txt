@@ -9,7 +9,7 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED True)
 
 # Add the main executable
-add_executable(Sudoku main.c)
+add_executable(Sudoku main.c generator.c)
 
 # Add the binary tree to the search path for include files
 target_include_directories(Sudoku PUBLIC
