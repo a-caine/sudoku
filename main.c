@@ -23,7 +23,6 @@ int main() {
 
 int validateString(char *s) {
     // Check that all the character lie in the correct range
-
     // Loop through each character
 
     char c = *s;
