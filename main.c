@@ -1,5 +1,6 @@
 #include "generator.h"
 #include "main.h"
+#include "helpers.h"
 
 #include <stdio.h>
 #include <ctype.h>
@@ -17,6 +18,12 @@ int main() {
     scanf("%19s", input);
 
     printf("%d",validateString(input));
+
+    if (validateString(input) == 0) {
+        writeNumber(input[0], input[1], charToNum(input[2]), &gameBoard);
+
+        printBoard(gameBoard);
+    }
 
     return 0;
 }
@@ -39,7 +46,5 @@ int validateString(char *s) {
         c = *(s + ++offset);
 
     }
-
-
     return 0;
 }
