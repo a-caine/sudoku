@@ -14,16 +14,16 @@ struct board generateEmptyBoard() {
 void printBoard(struct board b) {
 
     // Print out the first line help
-    printf("x|abc|def|ghi\n");
+    printf("x| a b c | d e f | g h i |\n");
     printf("-+");
     for (uint8_t i = 0; i < BOARD_SIZE + (BOARD_SIZE / 4); i++) {
         if ((i+1) % 4 == 0) {
-            printf("+");
+            printf("-+");
         } else {
-            printf("-");
+            printf("--");
         }
     }
-    printf("\n");
+    printf("-+\n");
 
     // Print out a row
     for (uint8_t r = 0; r < BOARD_SIZE; r++) {
@@ -36,13 +36,12 @@ void printBoard(struct board b) {
 
             for (uint8_t i = 0; i < BOARD_SIZE + (BOARD_SIZE / 4); i++) {
                 if ((i+1) % 4 == 0) {
-                    printf("+");
+                    printf("-+");
                 } else {
-                    printf("-");
+                    printf("--");
                 }
-                
             }
-            printf("\n");
+            printf("-+\n");
         }
 
         // Print out the help
@@ -52,19 +51,31 @@ void printBoard(struct board b) {
 
         for (uint8_t c = 0; c < BOARD_SIZE; c++) {
 
-            if (c % 3 == 0 && c != 0) printf("|");
+            if (c % 3 == 0 && c != 0) printf(" |");
 
-            printf("%d", *(b.numbers + (r * 9) + c));
+            printf(" %d", *(b.numbers + (r * 9) + c));
         }
 
-        printf("\n");
+        printf(" |\n");
 
     }
+    
+    // Close off the board
+    printf("-+");
+    for (uint8_t i = 0; i < BOARD_SIZE + (BOARD_SIZE / 4); i++) {
+        if ((i+1) % 4 == 0) {
+            printf("-+");
+        } else {
+            printf("--");
+        }
+    }
+    printf("-+\n");
 
 }
 
 
-int writeNumber(char r, char c, int v) {
+int writeNumber(char r, char c, int v, struct board *board) {
     // Calculate the column and row from the characters
+    
     
 }
