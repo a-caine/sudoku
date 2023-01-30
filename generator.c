@@ -1,4 +1,5 @@
 #include "generator.h"
+#include "helpers.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -74,8 +75,11 @@ void printBoard(struct board b) {
 }
 
 
-int writeNumber(char r, char c, int v, struct board *board) {
+int writeNumber(char r, char c, uint8_t v, struct board *board) {
     // Calculate the column and row from the characters
-    
+    int offset = (charToNum(r) - 1) * BOARD_SIZE + (charToNum(c));
+
+    // Set the value of the correct square to the new value
+    *(board->numbers + offset) = v;
     
 }

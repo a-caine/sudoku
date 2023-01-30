@@ -14,7 +14,7 @@ struct board generateEmptyBoard();
 
 void printBoard(struct board b);
 
-int writeNumber(char r, char c, int v, struct board *board);
+int writeNumber(char r, char c, uint8_t v, struct board *board);
 
 
 
