@@ -25,6 +25,22 @@ int main() {
         printBoard(gameBoard);
     }
 
+    struct num_stack stack;
+    init(&stack);
+
+    printf("Random Number: %i\n", randSudNum(&stack));
+    printf("Random Number: %i\n", randSudNum(&stack));
+    printf("Random Number: %i\n", randSudNum(&stack));
+    printf("Random Number: %i\n", randSudNum(&stack));
+    printf("Random Number: %i\n", randSudNum(&stack));
+    printf("Random Number: %i\n", randSudNum(&stack));
+    printf("Random Number: %i\n", randSudNum(&stack));
+    printf("Random Number: %i\n", randSudNum(&stack));
+    printf("Random Number: %i\n", randSudNum(&stack));
+    printf("Random Number: %i\n", randSudNum(&stack));
+
+    delete(&stack);
+
     return 0;
 }
 
